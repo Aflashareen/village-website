@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vengara Village - A Peaceful Retreat</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4f7942',secondary:'#8a9a5b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            min-height: 90vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #4f7942;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .switch-slider {
+            background-color: #4f7942;
+        }
+        input:checked + .switch-slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-3xl font-['Pacifico'] text-primary mr-10">Vengara</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link active text-gray-800 hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="nav-link text-gray-800 hover:text-primary transition-colors">About</a>
+                    <a href="#" class="nav-link text-gray-800 hover:text-primary transition-colors">Attractions</a>
+                    <a href="#" class="nav-link text-gray-800 hover:text-primary transition-colors">Events</a>
+                    <a href="#" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary text-sm">
+                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                <button class="bg-primary text-white px-5 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap hidden md:block">Book a Visit</button>
+                <div class="w-10 h-10 flex items-center justify-center md:hidden">
+                    <i class="ri-menu-line ri-lg"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-image: url(./vengara\ images.jpg);">
+        <div class="hero-overlay"></div>
+        <div class="container mx-auto px-4 relative h-full flex items-center">
+            <div class="max-w-3xl text-white pt-24">
+                <h1 class="text-5xl md:text-7xl font-bold heading-font leading-tight mb-6">Welcome to Vengara Village</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl">Experience the charm of rural living in our historic village nestled among rolling hills and lush forests.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap text-lg font-medium">Explore Village</button>
+                    <button class="bg-white text-gray-900 px-8 py-3 !rounded-button hover:bg-gray-100 transition-colors whitespace-nowrap text-lg font-medium">Watch Video</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold heading-font mb-6 text-gray-900">Our Beautiful Park</h2>
+                    <p class="text-gray-700 mb-6">Sabah Square Stadium in Vengara, Malappuram is known for its commitment to helping members achieve their health and fitness goals. With a rating of 4.5 stars based on 153 customer reviews, Sabah Square Stadium in Vengara, Malappuram has built a solid reputation for excellence and customer satisfaction.</p>
+                    <p class="text-gray-700 mb-8">Sabah Square refers to two distinct entities: a sports ground in Vengara, Malappuram, Kerala and a residential building in Downtown Jebel Ali, Dubai. </p>
+                    <button class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Learn More About Our History</button>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative rounded-lg overflow-hidden shadow-xl">
+                        <img src="./vengara images.jpg" alt="Greendale Village Heritage" class="w-full h-auto object-cover rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-gray-900">Discover Our Village</h2>
+                <p class="text-gray-700 max-w-3xl mx-auto">Explore the many attractions and natural wonders that make Greendale a perfect destination for those seeking tranquility and authentic experiences.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./vengara.freddo.webp" alt="Natural Wonders" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold heading-font mb-3 text-gray-900">Freddo cakes</h3>
+                        <p class="text-gray-700 mb-4">Explore our beautiful cafe, Freddo Cakes in Vengara, Malappuram is a renowned bakery offering a delectable range of freshly baked goods and pastries.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Discover More
+                            <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20charming%20traditional%20village%20marketplace%20with%20various%20artisan%20stalls%20and%20shops.%20Local%20craftspeople%20are%20displaying%20handmade%20pottery%2C%20woven%20baskets%2C%20and%20wooden%20carvings.%20The%20scene%20is%20bustling%20yet%20organized%2C%20with%20colorful%20awnings%20providing%20shade%20over%20the%20stalls.%20Customers%20browse%20the%20unique%20items%20while%20artisans%20demonstrate%20their%20crafts.%20The%20atmosphere%20is%20warm%20and%20inviting%2C%20with%20natural%20lighting%20highlighting%20the%20textures%20and%20colors%20of%20the%20handcrafted%20goods.%20The%20background%20shows%20traditional%20architecture%20typical%20of%20a%20historic%20rural%20village.&width=600&height=400&seq=4&orientation=landscape" alt="Local Crafts" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold heading-font mb-3 text-gray-900">Local Crafts & Artisans</h3>
+                        <p class="text-gray-700 mb-4">Discover the skilled craftspeople keeping traditional arts alive, from pottery and woodworking to textile weaving and blacksmithing.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Meet Our Artisans
+                            <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20rustic%20farm-to-table%20restaurant%20interior%20with%20wooden%20beams%20and%20stone%20walls.%20The%20tables%20are%20set%20with%20elegant%20yet%20simple%20place%20settings%2C%20featuring%20fresh%20wildflowers%20in%20small%20vases.%20Large%20windows%20allow%20natural%20light%20to%20flood%20the%20space%2C%20offering%20views%20of%20surrounding%20farmland.%20The%20kitchen%20is%20partially%20visible%2C%20showing%20chefs%20preparing%20meals%20with%20fresh%20ingredients.%20The%20atmosphere%20is%20warm%20and%20inviting%2C%20with%20soft%20lighting%20from%20iron%20chandeliers.%20A%20stone%20fireplace%20adds%20a%20cozy%20touch%20to%20one%20corner%20of%20the%20dining%20area.&width=600&height=400&seq=5&orientation=landscape" alt="Culinary Delights" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold heading-font mb-3 text-gray-900">Culinary Delights</h3>
+                        <p class="text-gray-700 mb-4">Savor authentic farm-to-table cuisine at our local eateries, featuring seasonal ingredients grown in the surrounding countryside.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Explore Local Cuisine
+                            <div class="w-5 h-5 flex items-center justify-center ml-1">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-gray-900">Upcoming Village Events</h2>
+                <p class="text-gray-700 max-w-3xl mx-auto">Join us for seasonal celebrations, cultural festivals, and community gatherings that showcase our traditions.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Event 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">May 28, 2025</div>
+                            <div class="text-gray-500 text-sm">10:00 AM - 6:00 PM</div>
+                        </div>
+                        <h3 class="text-xl font-bold heading-font mb-3 text-gray-900">Spring Harvest Festival</h3>
+                        <p class="text-gray-700 mb-4">Celebrate the arrival of spring with traditional music, dance performances, and the freshest seasonal produce from local farms.</p>
+                        <div class="flex items-center text-gray-600 mb-6">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span>Village Square</span>
+                        </div>
+                        <button class="w-full bg-primary text-white py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Register Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">June 15, 2025</div>
+                            <div class="text-gray-500 text-sm">7:00 PM - 10:00 PM</div>
+                        </div>
+                        <h3 class="text-xl font-bold heading-font mb-3 text-gray-900">Midsummer Night Concert</h3>
+                        <p class="text-gray-700 mb-4">An enchanting evening of classical and folk music performed by renowned musicians in our historic village church.</p>
+                        <div class="flex items-center text-gray-600 mb-6">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span>St. Mary's Church</span>
+                        </div>
+                        <button class="w-full bg-primary text-white py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Get Tickets</button>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">July 8-10, 2025</div>
+                            <div class="text-gray-500 text-sm">All Day</div>
+                        </div>
+                        <h3 class="text-xl font-bold heading-font mb-3 text-gray-900">Artisan Craft Fair</h3>
+                        <p class="text-gray-700 mb-4">A three-day exhibition featuring the finest handcrafted goods from our village artisans and invited craftspeople from the region.</p>
+                        <div class="flex items-center text-gray-600 mb-6">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span>Community Hall & Gardens</span>
+                        </div>
+                        <button class="w-full bg-primary text-white py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-white border border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap">View All Events</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-gray-900">Visitor Experiences</h2>
+                <p class="text-gray-700 max-w-3xl mx-auto">Hear what our visitors have to say about their time in Greendale Village.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-double-quotes-l ri-2x"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">My family and I spent a wonderful weekend in Greendale. The natural beauty, friendly locals, and delicious food made it an unforgettable experience. We'll definitely be returning soon!</p>
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+                                <div class="w-6 h-6 flex items-center justify-center text-gray-500">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900">Emily Richardson</h4>
+                            <p class="text-sm text-gray-500">London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-double-quotes-l ri-2x"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">As a photographer, I found Greendale to be a paradise of visual inspiration. The landscapes, architecture, and authentic village life provided endless opportunities for capturing the essence of rural beauty.</p>
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+                                <div class="w-6 h-6 flex items-center justify-center text-gray-500">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900">Michael Thornton</h4>
+                            <p class="text-sm text-gray-500">Toronto, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-double-quotes-l ri-2x"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">The pottery workshop I attended in Greendale was exceptional. The master potter was incredibly knowledgeable, and I left with both a beautiful handmade bowl and new skills I'll treasure forever.</p>
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+                                <div class="w-6 h-6 flex items-center justify-center text-gray-500">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900">Sophia Martinez</h4>
+                            <p class="text-sm text-gray-500">Barcelona, Spain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-primary/5">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-gray-900">Stay Updated</h2>
+                <p class="text-gray-700 mb-8">Subscribe to our newsletter to receive updates about upcoming events, seasonal activities, and special offers.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
+                    <button class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Subscribe</button>
+                </div>
+                
+                <div class="mt-4 text-sm text-gray-600 flex items-center justify-center">
+                    <input type="checkbox" id="consent" class="mr-2 accent-primary">
+                    <label for="consent">I agree to receive emails about Greendale Village news and events</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Greendale</a>
+                    <p class="text-gray-400 mb-6">A historic village nestled in the heart of nature, offering authentic experiences and timeless charm.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Greendale</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Visitor Information</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accommodation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Local Businesses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Village History</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-gray-400">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">Village Hall, Main Street, Greendale, GD12 4AB</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 text-gray-400">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">+44 (0)1234 567890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 text-gray-400">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@greendale-village.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Opening Hours</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Monday - Friday</span>
+                            <span class="text-gray-400">9:00 AM - 5:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Saturday</span>
+                            <span class="text-gray-400">10:00 AM - 4:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Sunday</span>
+                            <span class="text-gray-400">11:00 AM - 3:00 PM</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <h4 class="text-sm font-bold mb-2 text-gray-300">Language</h4>
+                        <div class="flex items-center">
+                            <span class="text-gray-400 mr-3">English</span>
+                            <label class="custom-switch">
+                                <input type="checkbox">
+                                <span class="switch-slider"></span>
+                            </label>
+                            <span class="text-gray-400 ml-3">Français</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Greendale Village. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sticky header
+            const header = document.querySelector('nav');
+            const heroSection = document.querySelector('.hero-section');
+            
+            function updateHeader() {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                    header.classList.remove('bg-white/90');
+                    header.classList.add('bg-white');
+                } else {
+                    header.classList.remove('shadow-md');
+                    header.classList.add('bg-white/90');
+                    header.classList.remove('bg-white');
+                }
+            }
+            
+            window.addEventListener('scroll', updateHeader);
+            updateHeader();
+        });
+    </script>
+</body>
+</html>
