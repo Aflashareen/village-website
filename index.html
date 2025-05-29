@@ -11,9 +11,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2e7d32', // Deep forest green
-                        secondary: '#66bb6a', // Light leafy green
-                        accent: '#a5d6a7' // Soft green for backgrounds
+                        primary: '#6B46C1', // Deep purple
+                        secondary: '#9F7AEA', // Light purple
+                        accent: '#E9D8FD' // Soft purple for backgrounds
                     },
                     borderRadius: {
                         'none': '0px',
@@ -46,7 +46,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: #1b5e20; /* Dark green text for body */
+            color: #E5E7EB; /* Light gray text for body */
         }
 
         .heading-font {
@@ -67,7 +67,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.3) 100%);
         }
 
         input[type="number"]::-webkit-inner-spin-button,
@@ -87,7 +87,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #2e7d32; /* Primary green for underline */
+            background-color: #6B46C1; /* Primary purple for underline */
             transition: width 0.3s ease;
         }
 
@@ -105,7 +105,7 @@
 
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
         }
 
         .custom-switch {
@@ -128,7 +128,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #ccc;
+            background-color: #4B5563;
             transition: .4s;
             border-radius: 34px;
         }
@@ -146,7 +146,7 @@
         }
 
         input:checked+.switch-slider {
-            background-color: #2e7d32; /* Primary green for switch */
+            background-color: #6B46C1; /* Primary purple for switch */
         }
 
         input:checked+.switch-slider:before {
@@ -155,27 +155,27 @@
     </style>
 </head>
 
-<body class="bg-accent/10">
+<body class="bg-gray-900">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+    <nav class="fixed w-full z-50 bg-gray-800/90 backdrop-blur-sm shadow-sm">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="#" class="text-3xl font-['Pacifico'] text-primary mr-10">Vengara</a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#" class="nav-link active text-primary hover:text-secondary transition-colors">Home</a>
-                    <a href="#" class="nav-link text-primary hover:text-secondary transition-colors">About</a>
-                    <a href="#" class="nav-link text-primary hover:text-secondary transition-colors">Attractions</a>
-                    <a href="#" class="nav-link text-primary hover:text-secondary transition-colors">Events</a>
+                    <a href="#home" class="nav-link active text-primary hover:text-secondary transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-primary hover:text-secondary transition-colors">About</a>
+                    <a href="#attractions" class="nav-link text-primary hover:text-secondary transition-colors">Attractions</a>
+                    <a href="#events" class="nav-link text-primary hover:text-secondary transition-colors">Events</a>
                     <a href="#notable-people" class="nav-link text-primary hover:text-secondary transition-colors">Notable People</a>
-                    <a href="#" class="nav-link text-primary hover:text-secondary transition-colors">Contact</a>
+                    <a href="#contact" class="nav-link text-primary hover:text-secondary transition-colors">Contact</a>
                 </div>
             </div>
             <div class="flex items-center space-x-4">
                 <div class="relative hidden md:block">
                     <input type="text" placeholder="Search..."
-                        class="pl-10 pr-4 py-2 rounded-full border border-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary text-sm text-primary">
+                        class="pl-10 pr-4 py-2 rounded-full border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary text-sm">
                     <div
-                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-secondary">
+                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
                         <i class="ri-search-line"></i>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
         </div>
     </nav>
     <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url(./vengara\ landscape.jpg);">
+    <section id="home" class="hero-section" style="background-image: url(./vengara\ landscape.jpg);">
         <div class="hero-overlay"></div>
         <div class="container mx-auto px-4 relative h-full flex items-center">
             <div class="max-w-3xl text-white pt-24">
@@ -202,23 +202,23 @@
                         class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition-colors whitespace-nowrap text-lg font-medium">Explore
                         Village</button>
                     <button
-                        class="bg-white text-primary px-8 py-3 !rounded-button hover:bg-accent transition-colors whitespace-nowrap text-lg font-medium">Watch
+                        class="bg-gray-700 text-primary px-8 py-3 !rounded-button hover:bg-gray-600 transition-colors whitespace-nowrap text-lg font-medium">Watch
                         Video</button>
                 </div>
             </div>
         </div>
     </section>
     <!-- About Section -->
-    <section class="py-20 bg-accent/20">
+    <section id="about" class="py-20 bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
                     <h2 class="text-3xl md:text-4xl font-bold heading-font mb-6 text-primary">Our Beautiful Park</h2>
-                    <p class="text-secondary mb-6">Sabah Square Stadium in Vengara, Malappuram is known for its
+                    <p class="text-gray-300 mb-6">Sabah Square Stadium in Vengara, Malappuram is known for its
                         commitment to helping members achieve their health and fitness goals. With a rating of 4.5 stars
                         based on 153 customer reviews, Sabah Square Stadium in Vengara, Malappuram has built a solid
                         reputation for excellence and customer satisfaction.</p>
-                    <p class="text-secondary mb-8">Sabah Square refers to two distinct entities: a sports ground in
+                    <p class="text-gray-300 mb-8">Sabah Square refers to two distinct entities: a sports ground in
                         Vengara, Malappuram, Kerala and a residential building in Downtown Jebel Ali, Dubai. </p>
                     <button
                         class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-secondary transition-colors whitespace-nowrap">Learn
@@ -234,26 +234,26 @@
         </div>
     </section>
     <!-- Attractions Section -->
-    <section class="py-20 bg-white">
+    <section id="attractions" class="py-20 bg-gray-700">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-primary">Discover Our Village</h2>
-                <p class="text-secondary max-w-3xl mx-auto">Explore the many attractions and natural wonders that make
+                <p class="text-gray-300 max-w-3xl mx-auto">Explore the many attractions and natural wonders that make
                     Vengara a perfect destination for those seeking tranquility and authentic experiences.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden card-hover">
                     <div class="h-64 overflow-hidden">
                         <img src="./vengara.freddo.webp" alt="Natural Wonders"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold heading-font mb-3 text-primary">Freddo Cakes</h3>
-                        <p class="text-secondary mb-4">Explore our beautiful cafe, Freddo Cakes in Vengara, Malappuram is
+                        <p class="text-gray-300 mb-4">Explore our beautiful cafe, Freddo Cakes in Vengara, Malappuram is
                             a renowned bakery offering a delectable range of freshly baked goods and pastries.</p>
-                        <a href="#" class="text-primary font-medium flex items-center">
-                            Discover More
+                        <a href="https://g.co/kgs/2Bmcknz" class="text-primary font-medium flex items-center">
+                            Discover More 
                             <div class="w-5 h-5 flex items-center justify-center ml-1">
                                 <i class="ri-arrow-right-line"></i>
                             </div>
@@ -261,16 +261,16 @@
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden card-hover">
                     <div class="h-64 overflow-hidden">
                         <img src="./vengarapolice.webp" alt="Vengara police station" class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold heading-font mb-3 text-primary">Vengara Police Station</h3>
-                        <p class="text-secondary mb-4">Police Station providing community policing and maintaining law and
+                        <p class="text-gray-300 mb-4">Police Station providing community policing and maintaining law and
                             order with efficient management. Information: Tdigwi, Vengara, Malappuram, Urakam, Kerala,
                             676304 · +919497980690 · +914942450210. Open: Mon-Sun 00:00-24:00.</p>
-                        <a href="#" class="text-primary font-medium flex items-center">
+                        <a href="https://g.co/kgs/dtJ7CGG" class="text-primary font-medium flex items-center">
                             Meet Our Officers
                             <div class="w-5 h-5 flex items-center justify-center ml-1">
                                 <i class="ri-arrow-right-line"></i>
@@ -279,16 +279,16 @@
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden card-hover">
                     <div class="h-64 overflow-hidden">
                         <img src="./aphauditoriumimages.jpg" alt="APH Auditorium"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold heading-font mb-3 text-primary">APH Auditorium</h3>
-                        <p class="text-secondary mb-4">Our APH Auditorium in Vengara can accommodate a seating capacity
+                        <p class="text-gray-300 mb-4">Our APH Auditorium in Vengara can accommodate a seating capacity
                             of 1000 and a floating capacity of 1500. The dining capacity of APH Auditorium is 600.</p>
-                        <a href="#" class="text-primary font-medium flex items-center">
+                        <a href="https://g.co/kgs/JMNyQRR" class="text-primary font-medium flex items-center">
                             Explore the Auditorium
                             <div class="w-5 h-5 flex items-center justify-center ml-1">
                                 <i class="ri-arrow-right-line"></i>
@@ -300,27 +300,27 @@
         </div>
     </section>
     <!-- Events Section -->
-    <section class="py-20 bg-accent/20">
+    <section id="events" class="py-20 bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-primary">Upcoming Village Events</h2>
-                <p class="text-secondary max-w-3xl mx-auto">Join us for seasonal celebrations, cultural festivals, and
+                <p class="text-gray-300 max-w-3xl mx-auto">Join us for seasonal celebrations, cultural festivals, and
                     community gatherings that showcase our traditions.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Event 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden card-hover">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Feb 1,
                                 2025</div>
-                            <div class="text-secondary text-sm">10:00 AM - 6:00 PM</div>
+                            <div class="text-gray-300 text-sm">10:00 AM - 6:00 PM</div>
                         </div>
                         <h3 class="text-xl font-bold heading-font mb-3 text-primary">Sri Ammancheri Bhagavathi Temple
                             Ulsavam</h3>
-                        <p class="text-secondary mb-4">A cultural festival held at Ammancheri Bhagavathi Temple, celebrating local
+                        <p class="text-gray-300 mb-4">A cultural festival held at Ammancheri Bhagavathi Temple, celebrating local
                             traditions, music, and dance.</p>
-                        <div class="flex items-center text-secondary mb-6">
+                        <div class="flex items-center text-gray-300 mb-6">
                             <div class="w-5 h-5 flex items-center justify-center mr-2">
                                 <i class="ri-map-pin-line"></i>
                             </div>
@@ -332,17 +332,17 @@
                     </div>
                 </div>
                 <!-- Event 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden card-hover">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Sep
                                 10-14, 2025</div>
-                            <div class="text-secondary text-sm">7:00 PM - 10:00 PM</div>
+                            <div class="text-gray-300 text-sm">7:00 PM - 10:00 PM</div>
                         </div>
                         <h3 class="text-xl font-bold heading-font mb-3 text-primary">GMVHSS Vengara School Programs
                         </h3>
-                        <p class="text-secondary mb-4">GMVHSS school program held at the school ground, featuring cultural performances like oppana and folk dance.</p>
-                        <div class="flex items-center text-secondary mb-6">
+                        <p class="text-gray-300 mb-4">GMVHSS school program held at the school ground, featuring cultural performances like oppana and folk dance.</p>
+                        <div class="flex items-center text-gray-300 mb-6">
                             <div class="w-5 h-5 flex items-center justify-center mr-2">
                                 <i class="ri-map-pin-line"></i>
                             </div>
@@ -354,16 +354,16 @@
                     </div>
                 </div>
                 <!-- Event 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden card-hover">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-4">
                             <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">July
                                 8-10, 2025</div>
-                            <div class="text-secondary text-sm">All Day</div>
+                            <div class="text-gray-300 text-sm">All Day</div>
                         </div>
                         <h3 class="text-xl font-bold heading-font mb-3 text-primary">FZ Academy Dance Program</h3>
-                        <p class="text-secondary mb-4">A dance program by FZ School of Arts at VPC Mall, showcasing local talent and cultural performances.</p>
-                        <div class="flex items-center text-secondary mb-6">
+                        <p class="text-gray-300 mb-4">A dance program by FZ School of Arts at VPC Mall, showcasing local talent and cultural performances.</p>
+                        <div class="flex items-center text-gray-300 mb-6">
                             <div class="w-5 h-5 flex items-center justify-center mr-2">
                                 <i class="ri-map-pin-line"></i>
                             </div>
@@ -377,92 +377,92 @@
             </div>
             <div class="text-center mt-12">
                 <button
-                    class="bg-white border border-primary text-primary px-8 py-3 !rounded-button hover:bg-accent transition-colors whitespace-nowrap">View
+                    class="bg-gray-700 border border-primary text-primary px-8 py-3 !rounded-button hover:bg-gray-600 transition-colors whitespace-nowrap">View
                     All Events</button>
             </div>
         </div>
     </section>
     <!-- Testimonials Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-gray-700">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-primary">Visitor Experiences</h2>
-                <p class="text-secondary max-w-3xl mx-auto">Hear what our visitors have to say about their time in
+                <p class="text-gray-300 max-w-3xl mx-auto">Hear what our visitors have to say about their time in
                     Vengara Village.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="flex items-center mb-6">
                         <div class="w-5 h-5 flex items-center justify-center text-primary">
                             <i class="ri-double-quotes-l ri-2x"></i>
                         </div>
                     </div>
-                    <p class="text-secondary mb-6">My family and I spent a wonderful weekend in Vengara. The natural
+                    <p class="text-gray-300 mb-6">My family and I spent a wonderful weekend in Vengara. The natural
                         beauty, friendly locals, and delicious food made it an unforgettable experience. We'll
                         definitely be returning soon!</p>
                     <div class="flex items-center">
                         <div class="mr-4">
                             <div
                                 class="w-12 h-12 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                                <div class="w-6 h-6 flex items-center justify-center text-secondary">
+                                <div class="w-6 h-6 flex items-center justify-center text-gray-700">
                                     <i class="ri-user-line"></i>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <h4 class="font-medium text-primary">Emily Richardson</h4>
-                            <p class="text-sm text-secondary">London, UK</p>
+                            <p class="text-sm text-gray-300">London, UK</p>
                         </div>
                     </div>
                 </div>
                 <!-- Testimonial 2 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="flex items-center mb-6">
                         <div class="w-5 h-5 flex items-center justify-center text-primary">
                             <i class="ri-double-quotes-l ri-2x"></i>
                         </div>
                     </div>
-                    <p class="text-secondary mb-6">As a photographer, I found Vengara to be a paradise of visual
+                    <p class="text-gray-300 mb-6">As a photographer, I found Vengara to be a paradise of visual
                         inspiration. The landscapes, architecture, and authentic village life provided endless
                         opportunities for capturing the essence of rural beauty.</p>
                     <div class="flex items-center">
                         <div class="mr-4">
                             <div
                                 class="w-12 h-12 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                                <div class="w-6 h-6 flex items-center justify-center text-secondary">
+                                <div class="w-6 h-6 flex items-center justify-center text-gray-700">
                                     <i class="ri-user-line"></i>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <h4 class="font-medium text-primary">Michael Thornton</h4>
-                            <p class="text-sm text-secondary">Toronto, Canada</p>
+                            <p class="text-sm text-gray-300">Toronto, Canada</p>
                         </div>
                     </div>
                 </div>
                 <!-- Testimonial 3 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="flex items-center mb-6">
                         <div class="w-5 h-5 flex items-center justify-center text-primary">
                             <i class="ri-double-quotes-l ri-2x"></i>
                         </div>
                     </div>
-                    <p class="text-secondary mb-6">The craft workshop I attended in Vengara was exceptional. The
+                    <p class="text-gray-300 mb-6">The craft workshop I attended in Vengara was exceptional. The
                         master was incredibly knowledgeable, and I left with both a beautiful handmade bouquet and
                         new skills I'll treasure forever.</p>
                     <div class="flex items-center">
                         <div class="mr-4">
                             <div
                                 class="w-12 h-12 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                                <div class="w-6 h-6 flex items-center justify-center text-secondary">
+                                <div class="w-6 h-6 flex items-center justify-center text-gray-700">
                                     <i class="ri-user-line"></i>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <h4 class="font-medium text-primary">Salman Khan</h4>
-                            <p class="text-sm text-secondary">Karol Bagh, Delhi</p>
+                            <p class="text-sm text-gray-300">Karol Bagh, Delhi</p>
                         </div>
                     </div>
                 </div>
@@ -470,23 +470,23 @@
         </div>
     </section>
     <!-- Notable People Section -->
-    <section class="py-20 bg-accent/20" id="notable-people">
+    <section id="notable-people" class="py-20 bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-primary">Notable People of Vengara</h2>
-                <p class="text-secondary max-w-3xl mx-auto">Celebrating the individuals who have shaped our village through their contributions in education, arts, philanthropy, and social work.</p>
+                <p class="text-gray-300 max-w-3xl mx-auto">Celebrating the individuals who have shaped our village through their contributions in education, arts, philanthropy, and social work.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Person 1 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                        <div class="w-12 h-12 flex items-center justify-center text-secondary">
+                        <div class="w-12 h-12 flex items-center justify-center text-gray-700">
                             <i class="ri-user-line ri-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold heading-font mb-3 text-primary">P. K. Kunhalikutty</h3>
-                    <p class="text-secondary text-sm mb-4">Politician & NRI Contributor</p>
-                    <p class="text-secondary mb-6">A key leader of the Indian Union Muslim League, P. K. Kunhalikutty has served as an MP and Minister, driving infrastructure, education, and healthcare improvements in Vengara with NRI support.</p>
+                    <p class="text-gray-300 text-sm mb-4">Politician & NRI Contributor</p>
+                    <p class="text-gray-300 mb-6">A key leader of the Indian Union Muslim League, P. K. Kunhalikutty has served as an MP and Minister, driving infrastructure, education, and healthcare improvements in Vengara with NRI support.</p>
                     <a href="#" class="text-primary font-medium flex items-center justify-center">
                         Learn More
                         <div class="w-5 h-5 flex items-center justify-center ml-1">
@@ -495,15 +495,15 @@
                     </a>
                 </div>
                 <!-- Person 2 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                        <div class="w-12 h-12 flex items-center justify-center text-secondary">
+                        <div class="w-12 h-12 flex items-center justify-center text-gray-700">
                             <i class="ri-user-line ri-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold heading-font mb-3 text-primary">Ustad Vengara Abdul Khader</h3>
-                    <p class="text-secondary text-sm mb-4">Artist - Musician</p>
-                    <p class="text-secondary mb-6">A celebrated Mappila Pattu singer, Ustad Abdul Khader has preserved Vengara’s cultural heritage, inspiring generations with his traditional folk music performances.</p>
+                    <p class="text-gray-300 text-sm mb-4">Artist - Musician</p>
+                    <p class="text-gray-300 mb-6">A celebrated Mappila Pattu singer, Ustad Abdul Khader has preserved Vengara’s cultural heritage, inspiring generations with his traditional folk music performances.</p>
                     <a href="#" class="text-primary font-medium flex items-center justify-center">
                         Learn More
                         <div class="w-5 h-5 flex items-center justify-center ml-1">
@@ -512,15 +512,15 @@
                     </a>
                 </div>
                 <!-- Person 3 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                        <div class="w-12 h-12 flex items-center justify-center text-secondary">
+                        <div class="w-12 h-12 flex items-center justify-center text-gray-700">
                             <i class="ri-user-line ri-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold heading-font mb-3 text-primary">Dr. A. P. Abdul Hakkim Azhari</h3>
-                    <p class="text-secondary text-sm mb-4">Educator & Social Worker</p>
-                    <p class="text-secondary mb-6">An Islamic scholar and educator, Dr. Azhari has established educational institutions and promoted interfaith harmony, uplifting Vengara’s underprivileged communities.</p>
+                    <p class="text-gray-300 text-sm mb-4">Educator & Social Worker</p>
+                    <p class="text-gray-300 mb-6">An Islamic scholar and educator, Dr. Azhari has established educational institutions and promoted interfaith harmony, uplifting Vengara’s underprivileged communities.</p>
                     <a href="#" class="text-primary font-medium flex items-center justify-center">
                         Learn More
                         <div class="w-5 h-5 flex items-center justify-center ml-1">
@@ -529,15 +529,15 @@
                     </a>
                 </div>
                 <!-- Person 4 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                        <div class="w-12 h-12 flex items-center justify-center text-secondary">
+                        <div class="w-12 h-12 flex items-center justify-center text-gray-700">
                             <i class="ri-user-line ri-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold heading-font mb-3 text-primary">Fathima Kutty</h3>
-                    <p class="text-secondary text-sm mb-4">Social Worker</p>
-                    <p class="text-secondary mb-6">A dedicated advocate for women’s empowerment, Fathima Kutty has provided vocational training and child welfare support, empowering Vengara’s women and youth.</p>
+                    <p class="text-gray-300 text-sm mb-4">Social Worker</p>
+                    <p class="text-gray-300 mb-6">A dedicated advocate for women’s empowerment, Fathima Kutty has provided vocational training and child welfare support, empowering Vengara’s women and youth.</p>
                     <a href="#" class="text-primary font-medium flex items-center justify-center">
                         Learn More
                         <div class="w-5 h-5 flex items-center justify-center ml-1">
@@ -546,15 +546,15 @@
                     </a>
                 </div>
                 <!-- Person 5 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                        <div class="w-12 h-12 flex items-center justify-center text-secondary">
+                        <div class="w-12 h-12 flex items-center justify-center text-gray-700">
                             <i class="ri-user-line ri-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold heading-font mb-3 text-primary">M. P. M. Ismail</h3>
-                    <p class="text-secondary text-sm mb-4">Teacher & Community Leader</p>
-                    <p class="text-secondary mb-6">A respected educator at GMVHSS Vengara, M. P. M. Ismail has mentored students and organized cultural programs, shaping the village’s academic and cultural landscape.</p>
+                    <p class="text-gray-300 text-sm mb-4">Teacher & Community Leader</p>
+                    <p class="text-gray-300 mb-6">A respected educator at GMVHSS Vengara, M. P. M. Ismail has mentored students and organized cultural programs, shaping the village’s academic and cultural landscape.</p>
                     <a href="#" class="text-primary font-medium flex items-center justify-center">
                         Learn More
                         <div class="w-5 h-5 flex items-center justify-center ml-1">
@@ -563,15 +563,15 @@
                     </a>
                 </div>
                 <!-- Person 6 -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                        <div class="w-12 h-12 flex items-center justify-center text-secondary">
+                        <div class="w-12 h-12 flex items-center justify-center text-gray-700">
                             <i class="ri-user-line ri-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold heading-font mb-3 text-primary">Haji K. Moidu</h3>
-                    <p class="text-secondary text-sm mb-4">NRI Philanthropist</p>
-                    <p class="text-secondary mb-6">A Dubai-based businessman, Haji K. Moidu has funded schools, mosques, and healthcare initiatives, significantly enhancing Vengara’s infrastructure and quality of life.</p>
+                    <p class="text-gray-300 text-sm mb-4">NRI Philanthropist</p>
+                    <p class="text-gray-300 mb-6">A Dubai-based businessman, Haji K. Moidu has funded schools, mosques, and healthcare initiatives, significantly enhancing Vengara’s infrastructure and quality of life.</p>
                     <a href="#" class="text-primary font-medium flex items-center justify-center">
                         Learn More
                         <div class="w-5 h-5 flex items-center justify-center ml-1">
@@ -583,35 +583,35 @@
         </div>
     </section>
     <!-- Contact and Visitor Info Section -->
-    <section class="py-20 bg-accent/20">
+    <section id="contact" class="py-20 bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-primary">Contact & Visitor Information
                 </h2>
-                <p class="text-secondary max-w-3xl mx-auto">Plan your visit to Vengara Village. Get in touch with us for
+                <p class="text-gray-300 max-w-3xl mx-auto">Plan your visit to Vengara Village. Get in touch with us for
                     more information or inquiries.</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Form and Details -->
-                <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                     <h3 class="text-2xl font-bold heading-font mb-6 text-primary">Get in Touch</h3>
                     <form action="#" class="space-y-6">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-secondary mb-1">Name</label>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
                             <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-3 rounded-lg border border-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                                 placeholder="Your name">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-medium text-secondary mb-1">Email</label>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
                             <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-3 rounded-lg border border-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                                 placeholder="Your email">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-secondary mb-1">Message</label>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
                             <textarea id="message" name="message" required rows="5"
-                                class="w-full px-4 py-3 rounded-lg border border-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                                 placeholder="Your message"></textarea>
                         </div>
                         <button type="submit"
@@ -622,30 +622,30 @@
                         <h4 class="text-lg font-bold mb-4 text-primary">Contact Details</h4>
                         <ul class="space-y-3">
                             <li class="flex items-start">
-                                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-secondary">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-gray-300">
                                     <i class="ri-map-pin-line"></i>
                                 </div>
-                                <span class="text-secondary">Village Hall, Main Street, Vengara, Malappuram, Kerala,
+                                <span class="text-gray-300">Village Hall, Main Street, Vengara, Malappuram, Kerala,
                                     676304</span>
                             </li>
                             <li class="flex items-center">
-                                <div class="w-5 h-5 flex items-center justify-center mr-3 text-secondary">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3 text-gray-300">
                                     <i class="ri-phone-line"></i>
                                 </div>
-                                <span class="text-secondary">+91 494 2450210</span>
+                                <span class="text-gray-300">+91 494 2450210</span>
                             </li>
                             <li class="flex items-center">
-                                <div class="w-5 h-5 flex items-center justify-center mr-3 text-secondary">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3 text-gray-300">
                                     <i class="ri-mail-line"></i>
                                 </div>
-                                <span class="text-secondary">info@vengara-village.com</span>
+                                <span class="text-gray-300">info@vengara-village.com</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <!-- Google Map and Visitor Info -->
                 <div>
-                    <div class="bg-white rounded-lg shadow-md p-8 card-hover mb-8">
+                    <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover mb-8">
                         <h3 class="text-2xl font-bold heading-font mb-6 text-primary">Find Us</h3>
                         <div class="w-full h-96 rounded-lg overflow-hidden">
                             <iframe
@@ -654,9 +654,9 @@
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-8 card-hover">
+                    <div class="bg-gray-700 rounded-lg shadow-md p-8 card-hover">
                         <h3 class="text-2xl font-bold heading-font mb-6 text-primary">Visitor Information</h3>
-                        <ul class="space-y-4 text-secondary">
+                        <ul class="space-y-4 text-gray-300">
                             <li class="flex items-start">
                                 <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
                                     <i class="ri-information-line"></i>
@@ -693,19 +693,19 @@
         </div>
     </section>
     <!-- Newsletter Section -->
-    <section class="py-20 bg-primary/5">
+    <section class="py-20 bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold heading-font mb-4 text-primary">Stay Updated</h2>
-                <p class="text-secondary mb-8">Subscribe to our newsletter to receive updates about upcoming events,
+                <p class="text-gray-300 mb-8">Subscribe to our newsletter to receive updates about upcoming events,
                     seasonal activities, and special offers.</p>
                 <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
                     <input type="email" placeholder="Your email address"
-                        class="flex-grow px-4 py-3 rounded-lg border border-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary text-secondary">
+                        class="flex-grow px-4 py-3 rounded-lg border border-gray-600 bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
                     <button
                         class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-secondary transition-colors whitespace-nowrap">Subscribe</button>
                 </div>
-                <div class="mt-4 text-sm text-secondary flex items-center justify-center">
+                <div class="mt-4 text-sm text-gray-300 flex items-center justify-center">
                     <input type="checkbox" id="consent" class="mr-2 accent-primary">
                     <label for="consent">I agree to receive emails about Vengara Village news and events</label>
                 </div>
@@ -713,28 +713,28 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="bg-primary text-white pt-16 pb-8">
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Vengara</a>
-                    <p class="text-accent mb-6">A historic village nestled in the heart of nature, offering authentic
+                    <a href="#" class="text-3xl font-['Pacifico'] text-primary mb-6 block">Vengara</a>
+                    <p class="text-gray-300 mb-6">A historic village nestled in the heart of nature, offering authentic
                         experiences and timeless charm.</p>
                     <div class="flex space-x-4">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center hover:bg-secondary transition-colors">
+                            class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center hover:bg-secondary transition-colors">
                             <i class="ri-facebook-fill"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center hover:bg-secondary transition-colors">
+                            class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center hover:bg-secondary transition-colors">
                             <i class="ri-instagram-line"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center hover:bg-secondary transition-colors">
+                            class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center hover:bg-secondary transition-colors">
                             <i class="ri-twitter-x-line"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center hover:bg-secondary transition-colors">
+                            class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center hover:bg-secondary transition-colors">
                             <i class="ri-youtube-line"></i>
                         </a>
                     </div>
@@ -742,13 +742,13 @@
                 <div>
                     <h3 class="text-lg font-bold mb-6 text-white">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-accent hover:text-white transition-colors">About Vengara</a></li>
-                        <li><a href="#" class="text-accent hover:text-white transition-colors">Visitor Information</a>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Vengara</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Visitor Information</a>
                         </li>
-                        <li><a href="#" class="text-accent hover:text-white transition-colors">Accommodation</a></li>
-                        <li><a href="#" class="text-accent hover:text-white transition-colors">Local Businesses</a>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Accommodation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Local Businesses</a>
                         </li>
-                        <li><a href="#" class="text-accent hover:text-white transition-colors">Village History</a>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Village History</a>
                         </li>
                     </ul>
                 </div>
@@ -756,23 +756,23 @@
                     <h3 class="text-lg font-bold mb-6 text-white">Contact Us</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start">
-                            <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-accent">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-gray-300">
                                 <i class="ri-map-pin-line"></i>
                             </div>
-                            <span class="text-accent">Village Hall, Main Street, Vengara, Malappuram, Kerala,
+                            <span class="text-gray-300">Village Hall, Main Street, Vengara, Malappuram, Kerala,
                                 676304</span>
                         </li>
                         <li class="flex items-center">
-                            <div class="w-5 h-5 flex items-center justify-center mr-3 text-accent">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 text-gray-300">
                                 <i class="ri-phone-line"></i>
                             </div>
-                            <span class="text-accent">+91 494 2450210</span>
+                            <span class="text-gray-300">+91 494 2450210</span>
                         </li>
                         <li class="flex items-center">
-                            <div class="w-5 h-5 flex items-center justify-center mr-3 text-accent">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 text-gray-300">
                                 <i class="ri-mail-line"></i>
                             </div>
-                            <span class="text-accent">info@vengara-village.com</span>
+                            <span class="text-gray-300">info@vengara-village.com</span>
                         </li>
                     </ul>
                 </div>
@@ -780,39 +780,39 @@
                     <h3 class="text-lg font-bold mb-6 text-white">Opening Hours</h3>
                     <ul class="space-y-3">
                         <li class="flex justify-between">
-                            <span class="text-accent">Monday - Friday</span>
-                            <span class="text-accent">9:00 AM - 5:00 PM</span>
+                            <span class="text-gray-300">Monday - Friday</span>
+                            <span class="text-gray-300">9:00 AM - 5:00 PM</span>
                         </li>
                         <li class="flex justify-between">
-                            <span class="text-accent">Saturday</span>
-                            <span class="text-accent">10:00 AM - 4:00 PM</span>
+                            <span class="text-gray-300">Saturday</span>
+                            <span class="text-gray-300">10:00 AM - 4:00 PM</span>
                         </li>
                         <li class="flex justify-between">
-                            <span class="text-accent">Sunday</span>
-                            <span class="text-accent">11:00 AM - 3:00 PM</span>
+                            <span class="text-gray-300">Sunday</span>
+                            <span class="text-gray-300">11:00 AM - 3:00 PM</span>
                         </li>
                     </ul>
                     <div class="mt-6">
                         <h4 class="text-sm font-bold mb-2 text-white">Language</h4>
                         <div class="flex items-center">
-                            <span class="text-accent mr-3">English</span>
+                            <span class="text-gray-300 mr-3">English</span>
                             <label class="custom-switch">
                                 <input type="checkbox">
                                 <span class="switch-slider"></span>
                             </label>
-                            <span class="text-accent ml-3">Malayalam</span>
+                            <span class="text-gray-300 ml-3">Malayalam</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-accent pt-8">
+            <div class="border-t border-gray-600 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-accent text-sm mb-4 md:mb-0">© 2025 Vengara Village. All rights reserved.</p>
+                    <p class="text-gray-300 text-sm mb-4 md:mb-0">© 2025 Vengara Village. All rights reserved.</p>
                     <div class="flex space-x-6">
-                        <a href="#" class="text-accent hover:text-white text-sm transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-accent hover:text-white text-sm transition-colors">Terms of
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Terms of
                             Service</a>
-                        <a href="#" class="text-accent hover:text-white text-sm transition-colors">Accessibility</a>
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Accessibility</a>
                     </div>
                 </div>
             </div>
@@ -841,12 +841,12 @@
             function updateHeader() {
                 if (window.scrollY > 50) {
                     header.classList.add('shadow-md');
-                    header.classList.remove('bg-white/90');
-                    header.classList.add('bg-white');
+                    header.classList.remove('bg-gray-800/90');
+                    header.classList.add('bg-gray-800');
                 } else {
                     header.classList.remove('shadow-md');
-                    header.classList.add('bg-white/90');
-                    header.classList.remove('bg-white');
+                    header.classList.add('bg-gray-800/90');
+                    header.classList.remove('bg-gray-800');
                 }
             }
             window.addEventListener('scroll', updateHeader);
